@@ -13,7 +13,6 @@
 + (SQLiteRequest *)createUserTable {
     
     NSString *sql = @"CREATE TABLE IF NOT EXISTS USER(user_id TEXT PRIMARY KEY, user_name TEXT);";
-    return [[SQLiteRequest alloc] initWithQuery:sql
-                                     parameters:nil];
+    return [[SQLiteRequest alloc] initWithQuery:sql parameters:nil];
 }
 @end

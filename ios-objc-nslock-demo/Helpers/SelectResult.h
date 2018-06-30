@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "FMResultSetInitializable.h"
-#import "TableModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

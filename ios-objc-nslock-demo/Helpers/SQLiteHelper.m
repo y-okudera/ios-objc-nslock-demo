@@ -8,8 +8,6 @@
 
 #import <FMDB/FMDatabase.h>
 #import "SQLiteHelper.h"
-#import "User.h"
-#import "Job.h"
 
 @interface SQLiteHelper ()
 
@@ -134,9 +132,8 @@ static NSString *const sqliteDBName = @"sample.sqlite3";
         NSLog(@"結果を格納するオブジェクトのTableModel不正");
         return;
     }
-
-    NSMutableArray < __kindof NSObject <FMResultSetInitializable> *> *resultArray = selectResult.resultArray;
-    [resultArray removeAllObjects];
+    
+    [selectResult.resultArray removeAllObjects];
 
     [self open];
 
