@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		9410BDBEE36B5273C7315FDC /* libPods-ios-objc-nslock-demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C3F0CAF7C1FF57BE1782975 /* libPods-ios-objc-nslock-demo.a */; };
+		B6564BE520E6AE06007BEF4C /* SQLiteHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B6564BE420E6AE06007BEF4C /* SQLiteHelper.m */; };
+		B6564BE820E72AB4007BEF4C /* SQLiteRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B6564BE720E72AB4007BEF4C /* SQLiteRequest.m */; };
+		B6564BF020E73C60007BEF4C /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = B6564BEF20E73C60007BEF4C /* User.m */; };
+		B6564BF520E73ED5007BEF4C /* NSObject+NullToNil.m in Sources */ = {isa = PBXBuildFile; fileRef = B6564BF420E73ED5007BEF4C /* NSObject+NullToNil.m */; };
+		B6564BF820E741D1007BEF4C /* Job.m in Sources */ = {isa = PBXBuildFile; fileRef = B6564BF720E741D1007BEF4C /* Job.m */; };
+		B6564BFC20E74C2A007BEF4C /* SelectResult.m in Sources */ = {isa = PBXBuildFile; fileRef = B6564BFB20E74C2A007BEF4C /* SelectResult.m */; };
+		B66FEF5920E75DDF00C614E0 /* UserDao.m in Sources */ = {isa = PBXBuildFile; fileRef = B66FEF5820E75DDF00C614E0 /* UserDao.m */; };
+		B66FEF5C20E75F3A00C614E0 /* JobDao.m in Sources */ = {isa = PBXBuildFile; fileRef = B66FEF5B20E75F3A00C614E0 /* JobDao.m */; };
 		B6ACC02920E6A6760057CE71 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B6ACC02820E6A6760057CE71 /* AppDelegate.m */; };
 		B6ACC02C20E6A6760057CE71 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6ACC02B20E6A6760057CE71 /* ViewController.m */; };
 		B6ACC02F20E6A6760057CE71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6ACC02D20E6A6760057CE71 /* Main.storyboard */; };
@@ -44,6 +52,24 @@
 		4BF25B0D7E01715DBFAC3576 /* Pods-ios-objc-nslock-demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-objc-nslock-demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios-objc-nslock-demo/Pods-ios-objc-nslock-demo.debug.xcconfig"; sourceTree = "<group>"; };
 		85CF291F78766B373F0D872A /* Pods-ios-objc-nslock-demoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-objc-nslock-demoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios-objc-nslock-demoTests/Pods-ios-objc-nslock-demoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8C3F0CAF7C1FF57BE1782975 /* libPods-ios-objc-nslock-demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ios-objc-nslock-demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6564BE320E6AE06007BEF4C /* SQLiteHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQLiteHelper.h; sourceTree = "<group>"; };
+		B6564BE420E6AE06007BEF4C /* SQLiteHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQLiteHelper.m; sourceTree = "<group>"; };
+		B6564BE620E72AB4007BEF4C /* SQLiteRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQLiteRequest.h; sourceTree = "<group>"; };
+		B6564BE720E72AB4007BEF4C /* SQLiteRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQLiteRequest.m; sourceTree = "<group>"; };
+		B6564BEA20E732CC007BEF4C /* FMResultSetInitializable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMResultSetInitializable.h; sourceTree = "<group>"; };
+		B6564BEE20E73C60007BEF4C /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		B6564BEF20E73C60007BEF4C /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		B6564BF320E73ED5007BEF4C /* NSObject+NullToNil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+NullToNil.h"; sourceTree = "<group>"; };
+		B6564BF420E73ED5007BEF4C /* NSObject+NullToNil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+NullToNil.m"; sourceTree = "<group>"; };
+		B6564BF620E741D1007BEF4C /* Job.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Job.h; sourceTree = "<group>"; };
+		B6564BF720E741D1007BEF4C /* Job.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Job.m; sourceTree = "<group>"; };
+		B6564BF920E7462E007BEF4C /* TableModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableModel.h; sourceTree = "<group>"; };
+		B6564BFA20E74C2A007BEF4C /* SelectResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelectResult.h; sourceTree = "<group>"; };
+		B6564BFB20E74C2A007BEF4C /* SelectResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelectResult.m; sourceTree = "<group>"; };
+		B66FEF5720E75DDF00C614E0 /* UserDao.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserDao.h; sourceTree = "<group>"; };
+		B66FEF5820E75DDF00C614E0 /* UserDao.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserDao.m; sourceTree = "<group>"; };
+		B66FEF5A20E75F3A00C614E0 /* JobDao.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JobDao.h; sourceTree = "<group>"; };
+		B66FEF5B20E75F3A00C614E0 /* JobDao.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JobDao.m; sourceTree = "<group>"; };
 		B6ACC02420E6A6760057CE71 /* ios-objc-nslock-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-objc-nslock-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6ACC02720E6A6760057CE71 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B6ACC02820E6A6760057CE71 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -116,6 +142,61 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B6564BE220E6ADBC007BEF4C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B6564BE320E6AE06007BEF4C /* SQLiteHelper.h */,
+				B6564BE420E6AE06007BEF4C /* SQLiteHelper.m */,
+				B6564BE620E72AB4007BEF4C /* SQLiteRequest.h */,
+				B6564BE720E72AB4007BEF4C /* SQLiteRequest.m */,
+				B6564BFA20E74C2A007BEF4C /* SelectResult.h */,
+				B6564BFB20E74C2A007BEF4C /* SelectResult.m */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		B6564BE920E731FD007BEF4C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B6564BED20E73C3F007BEF4C /* Protocol */,
+				B6564BF920E7462E007BEF4C /* TableModel.h */,
+				B6564BEE20E73C60007BEF4C /* User.h */,
+				B6564BEF20E73C60007BEF4C /* User.m */,
+				B6564BF620E741D1007BEF4C /* Job.h */,
+				B6564BF720E741D1007BEF4C /* Job.m */,
+				B66FEF5720E75DDF00C614E0 /* UserDao.h */,
+				B66FEF5820E75DDF00C614E0 /* UserDao.m */,
+				B66FEF5A20E75F3A00C614E0 /* JobDao.h */,
+				B66FEF5B20E75F3A00C614E0 /* JobDao.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B6564BED20E73C3F007BEF4C /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				B6564BEA20E732CC007BEF4C /* FMResultSetInitializable.h */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		B6564BF120E73E7B007BEF4C /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				B6564BF220E73EC3007BEF4C /* Foundation */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		B6564BF220E73EC3007BEF4C /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				B6564BF320E73ED5007BEF4C /* NSObject+NullToNil.h */,
+				B6564BF420E73ED5007BEF4C /* NSObject+NullToNil.m */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
 		B6ACC01B20E6A6760057CE71 = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +222,9 @@
 		B6ACC02620E6A6760057CE71 /* ios-objc-nslock-demo */ = {
 			isa = PBXGroup;
 			children = (
+				B6564BF120E73E7B007BEF4C /* Categories */,
+				B6564BE220E6ADBC007BEF4C /* Helpers */,
+				B6564BE920E731FD007BEF4C /* Models */,
 				B6ACC02720E6A6760057CE71 /* AppDelegate.h */,
 				B6ACC02820E6A6760057CE71 /* AppDelegate.m */,
 				B6ACC02A20E6A6760057CE71 /* ViewController.h */,
@@ -362,9 +446,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B66FEF5C20E75F3A00C614E0 /* JobDao.m in Sources */,
+				B6564BF520E73ED5007BEF4C /* NSObject+NullToNil.m in Sources */,
+				B6564BFC20E74C2A007BEF4C /* SelectResult.m in Sources */,
+				B6564BE820E72AB4007BEF4C /* SQLiteRequest.m in Sources */,
 				B6ACC02C20E6A6760057CE71 /* ViewController.m in Sources */,
+				B6564BF820E741D1007BEF4C /* Job.m in Sources */,
+				B66FEF5920E75DDF00C614E0 /* UserDao.m in Sources */,
+				B6564BF020E73C60007BEF4C /* User.m in Sources */,
 				B6ACC03720E6A67A0057CE71 /* main.m in Sources */,
 				B6ACC02920E6A6760057CE71 /* AppDelegate.m in Sources */,
+				B6564BE520E6AE06007BEF4C /* SQLiteHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
