@@ -13,7 +13,6 @@
 + (SQLiteRequest *)createJobTable {
     
     NSString *sql = @"CREATE TABLE IF NOT EXISTS JOB(job_id INTEGER PRIMARY KEY AUTOINCREMENT, job_name TEXT, work_location TEXT);";
-    return [[SQLiteRequest alloc] initWithQuery:sql
-                                     parameters:nil];
+    return [[SQLiteRequest alloc] initWithQuery:sql parameters:nil];
 }
 @end
