@@ -19,12 +19,12 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSString *)dbPath;
 
 /**
-INSERT, UPDATE, DELETE
+ INSERT, UPDATE, DELETE
 
-@param requests (NSArray <SQLiteRequest *>*) queryとparametersの配列
-@return YES: 成功, NO: 失敗
-*/
-- (BOOL)executeUpdate:(NSArray <SQLiteRequest *>*)requests;
+ @param requests (NSArray <SQLiteRequest *>*) queryとparametersの配列
+ @param result (BOOL *) 結果 YES: 成功, NO: 失敗
+ */
+- (void)inTransaction:(NSArray <SQLiteRequest *> *)requests result:(BOOL *)result;
 
 /**
  SELECT

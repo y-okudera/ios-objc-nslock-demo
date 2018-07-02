@@ -6,8 +6,8 @@ target 'ios-objc-nslock-demo' do
   # use_frameworks!
 
   # Pods for ios-objc-nslock-demo
-  pod 'FMDB', '2.7.2'
-
+  # pod 'FMDB', '2.7.2'
+  pod 'FMDB/SQLCipher'
   target 'ios-objc-nslock-demoTests' do
     inherit! :search_paths
     # Pods for testing

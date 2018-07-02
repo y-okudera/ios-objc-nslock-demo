@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "JobDao.h"
+#import "UserDao.h"
 
 @interface ViewController ()
 
@@ -16,7 +18,43 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+
+    BOOL createTableResult = [self createAllTable];
+    createTableResult ? NSLog(@"Table作成成功") : NSLog(@"Table作成失敗");
+
+    [self insert];
+}
+
+#pragma mark - Private methods
+
+- (BOOL)createAllTable {
+
+    NSMutableArray <SQLiteRequest *> *requests = [@[] mutableCopy];
+    [requests addObject:[UserDao createUserTable]];
+    [requests addObject:[JobDao createJobTable]];
+
+    BOOL result = YES;
+    [[SQLiteHelper shared] inTransaction:requests result:&result];
+    return result;
+}
+
+- (void)insert {
+
+    NSMutableArray <SQLiteRequest *> *insertRequests = [@[] mutableCopy];
+
+    for (int i = 0; i < 10000; i++) {
+
+        NSLog(@"i = %d", i);
+        NSString *jobName = [NSString stringWithFormat:@"JOB%05d", i];
+        NSString *workLocation = @"東京都台東区浅草１丁目";
+        SQLiteRequest *request = [[SQLiteRequest alloc] initWithQuery:@"INSERT INTO JOB(job_name, work_location) VALUES(?, ?);"
+                                                           parameters:@[jobName, workLocation]];
+        [insertRequests addObject:request];
+    }
+
+    BOOL insertResult = YES;
+    [[SQLiteHelper shared] inTransaction:insertRequests result:&insertResult];
+    insertResult ? NSLog(@"INSERT処理成功") : NSLog(@"INSERT処理失敗");
 }
 
 

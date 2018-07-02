@@ -7,6 +7,7 @@
 //
 
 #import <FMDB/FMDatabase.h>
+#import "FMDatabaseQueue.h"
 #import "SQLiteHelper.h"
 
 @interface SQLiteHelper ()
@@ -16,6 +17,7 @@
 @end
 
 static NSString *const sqliteDBName = @"sample.sqlite3";
+static NSString *const sqliteDBKey = @"zaq12wsxcde34rfvbgt56yhnmju78ik,";
 
 @implementation SQLiteHelper
 
@@ -56,6 +58,11 @@ static NSString *const sqliteDBName = @"sample.sqlite3";
     NSLog(@"open開始");
     BOOL openResult = [self.fmdb open];
     NSLog(@"open終了");
+
+    if (openResult) {
+        openResult = [self.fmdb setKey:sqliteDBKey];
+    }
+
     return openResult;
 }
 
@@ -77,47 +84,40 @@ static NSString *const sqliteDBName = @"sample.sqlite3";
 /**
  INSERT, UPDATE, DELETE
 
- @param requests (NSArray <SQLiteRequest *>*) query・parametersの配列
- @return YES: 成功, NO: 失敗
+ @param requests (NSArray <SQLiteRequest *>*) queryとparametersの配列
+ @param result (BOOL *) 結果 YES: 成功, NO: 失敗
  */
-- (BOOL)executeUpdate:(NSArray <SQLiteRequest *>*)requests {
-
-    BOOL result = YES;
+- (void)inTransaction:(NSArray <SQLiteRequest *> *)requests result:(BOOL *)result {
 
     [self open];
-    [self.fmdb beginTransaction];
 
-    for (SQLiteRequest *sqliteRequest in requests) {
+    FMDatabaseQueue *queue = [FMDatabaseQueue databaseQueueWithPath:[[self class] dbPath]];
+    [queue inDatabase:^(FMDatabase *db) {
+        [db setKey:sqliteDBKey];
+    }];
 
-        result = [self.fmdb executeUpdate:sqliteRequest.query withArgumentsInArray:sqliteRequest.parameters];
+    [queue inTransaction:^(FMDatabase *db, BOOL *rollback) {
 
-        BOOL hadError = [self.fmdb hadError];
-        if (!result || hadError) {
+        *result = YES;
 
-            int lastErrorCode = [self.fmdb lastErrorCode];
-            NSString *lastErrorMessage = [self.fmdb lastErrorMessage];
-            NSLog(@"lastErrorCode: %d, lastErrorMessage: %@", lastErrorCode, lastErrorMessage);
+        for (SQLiteRequest *sqliteRequest in requests) {
 
-            result = NO;
-            break;
+            *result = [db executeUpdate:sqliteRequest.query withArgumentsInArray:sqliteRequest.parameters];
+
+            BOOL hadError = [self.fmdb hadError];
+            if (!*result || hadError) {
+
+                int lastErrorCode = [self.fmdb lastErrorCode];
+                NSString *lastErrorMessage = [self.fmdb lastErrorMessage];
+                NSLog(@"lastErrorCode: %d, lastErrorMessage: %@", lastErrorCode, lastErrorMessage);
+
+                *rollback = YES;
+                break;
+            }
         }
-    }
-
-    if (result) {
-        BOOL commitResult = [self.fmdb commit];
-        if (!commitResult) {
-            exit(0);
-        }
-    } else {
-        BOOL rollbackResult = [self.fmdb rollback];
-        if (!rollbackResult) {
-            exit(0);
-        }
-    }
+    }];
 
     [self close];
-
-    return result;
 }
 
 /**
