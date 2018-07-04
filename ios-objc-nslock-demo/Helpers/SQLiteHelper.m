@@ -21,6 +21,9 @@ static NSString *const sqliteDBKey = @"zaq12wsxcde34rfvbgt56yhnmju78ik,";
 
 @implementation SQLiteHelper
 
+#pragma mark - Singleton
+
+
 + (instancetype)shared {
 
     static SQLiteHelper *sqliteHelper = nil;
@@ -31,12 +34,16 @@ static NSString *const sqliteDBKey = @"zaq12wsxcde34rfvbgt56yhnmju78ik,";
     return sqliteHelper;
 }
 
+#pragma mark - Database path
+
 + (NSString *)dbPath {
     NSString *documentsDirectory = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
                                                                        NSUserDomainMask,
                                                                        YES).firstObject;
     return [documentsDirectory stringByAppendingPathComponent:sqliteDBName];
 }
+
+#pragma mark - Init
 
 - (instancetype)init {
 
@@ -47,6 +54,8 @@ static NSString *const sqliteDBKey = @"zaq12wsxcde34rfvbgt56yhnmju78ik,";
     }
     return self;
 }
+
+#pragma mark - Open and close database
 
 - (BOOL)open {
 
@@ -80,6 +89,8 @@ static NSString *const sqliteDBKey = @"zaq12wsxcde34rfvbgt56yhnmju78ik,";
 
     return closeResult;
 }
+
+#pragma mark - FMDatabaseQueue
 
 /**
  INSERT, UPDATE, DELETE
@@ -119,6 +130,8 @@ static NSString *const sqliteDBKey = @"zaq12wsxcde34rfvbgt56yhnmju78ik,";
 
     [self close];
 }
+
+#pragma mark - Execute queries
 
 /**
  SELECT

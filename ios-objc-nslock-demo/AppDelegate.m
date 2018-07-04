@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "PlainDAO.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,20 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+
+    // plain.sqliteがDocumentsディレクトリに存在しなければコピーする
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if (![fileManager fileExistsAtPath:[PlainDAO dbPath]]) {
+        NSString *plainDBPath = [NSBundle.mainBundle pathForResource:@"plain" ofType:@"sqlite"];
+        NSError *error = nil;
+        [fileManager copyItemAtPath:plainDBPath
+                             toPath:[PlainDAO dbPath]
+                              error:&error];
+        if (error && error.code != 0) {
+            NSLog(@"error: %ld %@", error.code, error.description);
+        }
+    }
+    [[PlainDAO shared] encrypt];
     return YES;
 }
 

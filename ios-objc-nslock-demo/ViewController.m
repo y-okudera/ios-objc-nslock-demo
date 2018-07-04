@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "JOb.h"
 #import "JobDao.h"
 #import "UserDao.h"
 
@@ -19,10 +20,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    BOOL createTableResult = [self createAllTable];
-    createTableResult ? NSLog(@"Table作成成功") : NSLog(@"Table作成失敗");
+//    BOOL createTableResult = [self createAllTable];
+//    createTableResult ? NSLog(@"Table作成成功") : NSLog(@"Table作成失敗");
+//
+//    [self insert];
 
-    [self insert];
+
+    NSString *sql = @"SELECT * FROM company_master;";
+    SQLiteRequest *request = [[SQLiteRequest alloc] initWithQuery:sql parameters:nil tableModel:TableModelJob];
+
+    SelectResult <Job *>*result = [[SelectResult alloc] initWithTableModel:TableModelJob resultType:Job.new];
+    [[SQLiteHelper shared] executeQuery:request result:result];
+
 }
 
 #pragma mark - Private methods

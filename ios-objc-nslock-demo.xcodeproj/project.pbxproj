@@ -24,6 +24,8 @@
 		B6ACC03720E6A67A0057CE71 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B6ACC03620E6A67A0057CE71 /* main.m */; };
 		B6ACC04120E6A67A0057CE71 /* ios_objc_nslock_demoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B6ACC04020E6A67A0057CE71 /* ios_objc_nslock_demoTests.m */; };
 		B6ACC04C20E6A67A0057CE71 /* ios_objc_nslock_demoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B6ACC04B20E6A67A0057CE71 /* ios_objc_nslock_demoUITests.m */; };
+		B6BAFEA820ED3F02008C0011 /* plain.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = B6BAFEA720ED3F02008C0011 /* plain.sqlite */; };
+		B6BAFEAB20ED4B05008C0011 /* PlainDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = B6BAFEAA20ED4B05008C0011 /* PlainDAO.m */; };
 		D80B5B600EBDE9BB2302CBE4 /* libPods-ios-objc-nslock-demoUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F599523088D4CC9DA89446DB /* libPods-ios-objc-nslock-demoUITests.a */; };
 		DE3B3537650FA1176A73B069 /* libPods-ios-objc-nslock-demoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA482837B13D434F5889275 /* libPods-ios-objc-nslock-demoTests.a */; };
 /* End PBXBuildFile section */
@@ -86,6 +88,9 @@
 		B6ACC04720E6A67A0057CE71 /* ios-objc-nslock-demoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-objc-nslock-demoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6ACC04B20E6A67A0057CE71 /* ios_objc_nslock_demoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ios_objc_nslock_demoUITests.m; sourceTree = "<group>"; };
 		B6ACC04D20E6A67A0057CE71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B6BAFEA720ED3F02008C0011 /* plain.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = plain.sqlite; sourceTree = "<group>"; };
+		B6BAFEA920ED4B05008C0011 /* PlainDAO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlainDAO.h; sourceTree = "<group>"; };
+		B6BAFEAA20ED4B05008C0011 /* PlainDAO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlainDAO.m; sourceTree = "<group>"; };
 		D9C108486E63A8B8A3357FA5 /* Pods-ios-objc-nslock-demoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-objc-nslock-demoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios-objc-nslock-demoUITests/Pods-ios-objc-nslock-demoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		EF4E5E241F2078012D7CAD6B /* Pods-ios-objc-nslock-demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-objc-nslock-demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios-objc-nslock-demo/Pods-ios-objc-nslock-demo.release.xcconfig"; sourceTree = "<group>"; };
 		F599523088D4CC9DA89446DB /* libPods-ios-objc-nslock-demoUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ios-objc-nslock-demoUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,6 +150,8 @@
 		B6564BE220E6ADBC007BEF4C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				B6BAFEA920ED4B05008C0011 /* PlainDAO.h */,
+				B6BAFEAA20ED4B05008C0011 /* PlainDAO.m */,
 				B6564BE320E6AE06007BEF4C /* SQLiteHelper.h */,
 				B6564BE420E6AE06007BEF4C /* SQLiteHelper.m */,
 				B6564BE620E72AB4007BEF4C /* SQLiteRequest.h */,
@@ -222,6 +229,7 @@
 		B6ACC02620E6A6760057CE71 /* ios-objc-nslock-demo */ = {
 			isa = PBXGroup;
 			children = (
+				B6BAFEA420ED3AFB008C0011 /* Resources */,
 				B6564BF120E73E7B007BEF4C /* Categories */,
 				B6564BE220E6ADBC007BEF4C /* Helpers */,
 				B6564BE920E731FD007BEF4C /* Models */,
@@ -254,6 +262,14 @@
 				B6ACC04D20E6A67A0057CE71 /* Info.plist */,
 			);
 			path = "ios-objc-nslock-demoUITests";
+			sourceTree = "<group>";
+		};
+		B6BAFEA420ED3AFB008C0011 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B6BAFEA720ED3F02008C0011 /* plain.sqlite */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -362,6 +378,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6BAFEA820ED3F02008C0011 /* plain.sqlite in Resources */,
 				B6ACC03420E6A67A0057CE71 /* LaunchScreen.storyboard in Resources */,
 				B6ACC03120E6A67A0057CE71 /* Assets.xcassets in Resources */,
 				B6ACC02F20E6A6760057CE71 /* Main.storyboard in Resources */,
@@ -455,6 +472,7 @@
 				B66FEF5920E75DDF00C614E0 /* UserDao.m in Sources */,
 				B6564BF020E73C60007BEF4C /* User.m in Sources */,
 				B6ACC03720E6A67A0057CE71 /* main.m in Sources */,
+				B6BAFEAB20ED4B05008C0011 /* PlainDAO.m in Sources */,
 				B6ACC02920E6A6760057CE71 /* AppDelegate.m in Sources */,
 				B6564BE520E6AE06007BEF4C /* SQLiteHelper.m in Sources */,
 			);
