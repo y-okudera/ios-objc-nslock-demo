@@ -1,8 +1,8 @@
 //
-//  NSObject+NullToNil.h
+//  Singleton.h
 //  ios-objc-nslock-demo
 //
-//  Created by YukiOkudera on 2018/06/30.
+//  Created by YukiOkudera on 2018/07/19.
 //  Copyright © 2018年 YukiOkudera. All rights reserved.
 //
 
@@ -10,9 +10,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NSObject (NullToNil)
+@interface Singleton : NSObject
 
-- (__kindof NSObject *)nullToNil;
++ (instancetype)shared;
+- (void)lockStart;
+- (void)lockEnd;
 @end
 
 NS_ASSUME_NONNULL_END
