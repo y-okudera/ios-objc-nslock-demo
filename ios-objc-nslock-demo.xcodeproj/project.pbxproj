@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B620BA4B20FFAB01000090C8 /* Singleton.m in Sources */ = {isa = PBXBuildFile; fileRef = B620BA4920FFAB01000090C8 /* Singleton.m */; };
 		B6ACC02920E6A6760057CE71 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B6ACC02820E6A6760057CE71 /* AppDelegate.m */; };
 		B6ACC02C20E6A6760057CE71 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6ACC02B20E6A6760057CE71 /* ViewController.m */; };
 		B6ACC02F20E6A6760057CE71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6ACC02D20E6A6760057CE71 /* Main.storyboard */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B620BA4920FFAB01000090C8 /* Singleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Singleton.m; sourceTree = "<group>"; };
+		B620BA4A20FFAB01000090C8 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
 		B6ACC02420E6A6760057CE71 /* ios-objc-nslock-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-objc-nslock-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6ACC02720E6A6760057CE71 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B6ACC02820E6A6760057CE71 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -85,6 +88,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B620BA4820FFAAF2000090C8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B620BA4A20FFAB01000090C8 /* Singleton.h */,
+				B620BA4920FFAB01000090C8 /* Singleton.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		B6ACC01B20E6A6760057CE71 = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +121,7 @@
 		B6ACC02620E6A6760057CE71 /* ios-objc-nslock-demo */ = {
 			isa = PBXGroup;
 			children = (
+				B620BA4820FFAAF2000090C8 /* Models */,
 				B6ACC02720E6A6760057CE71 /* AppDelegate.h */,
 				B6ACC02820E6A6760057CE71 /* AppDelegate.m */,
 				B6ACC02A20E6A6760057CE71 /* ViewController.h */,
@@ -312,6 +325,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6ACC02C20E6A6760057CE71 /* ViewController.m in Sources */,
+				B620BA4B20FFAB01000090C8 /* Singleton.m in Sources */,
 				B6ACC03720E6A67A0057CE71 /* main.m in Sources */,
 				B6ACC02920E6A6760057CE71 /* AppDelegate.m in Sources */,
 			);
